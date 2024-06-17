@@ -4,30 +4,74 @@
   <groupId>edu.escuelaing.arsw.ASE.app</groupId>
   <artifactId>Mean-SD-Lambda-DataGenerics</artifactId>
   <packaging>jar</packaging>
+  <version>1.0-SNAPSHOT</version>
   <build>
     <plugins>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <configuration>
+          <source>17</source>
+          <target>17</target>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <version>3.3.1</version>
+        <configuration>
+
+          <reportOutputDirectory>${project.basedir}/documentation/javadocs</reportOutputDirectory>
+          <destDir>${project.basedir}/documentation/javadocs</destDir>
+          <testReportOutputDirectory>${project.basedir}/documentation/testJavadocs</testReportOutputDirectory>
+
+          <aggregate>true</aggregate>
+          <aggregateTest>true</aggregateTest>
+        </configuration>
+        <executions>
+          <execution>
+            <id>generate-javadocs</id>
+            <goals>
+              <goal>javadoc</goal>
+              <goal>aggregate</goal>
+              <goal>aggregate-jar</goal>
+            </goals>
+            <configuration>
+              <reportOutputDirectory>${project.basedir}/documentation/javadocs</reportOutputDirectory>
+              <destDir>${project.basedir}/documentation/javadocs</destDir>
+              <aggregateOutputDirectory>${project.basedir}/documentation/aggregate-javadocs</aggregateOutputDirectory>
+            </configuration>
+          </execution>
+          <execution>
+            <id>generate-test-javadocs</id>
+            <goals>
+              <goal>test-javadoc</goal>
+              <goal>test-aggregate</goal>
+              <goal>test-aggregate-jar</goal>
+            </goals>
+            <configuration>
+              <testReportOutputDirectory>${project.basedir}/documentation/testJavadocs</testReportOutputDirectory>
+              <destDir>${project.basedir}/documentation/testJavadocs</destDir>
+              <testAggregateOutputDirectory>${project.basedir}/documentation/testJavadocs</testAggregateOutputDirectory>
+            </configuration>
+          </execution>
+        </executions>
       </plugin>
     </plugins>
   </build>
-  <version>1.0-SNAPSHOT</version>
   <name>Mean-SD-Lambda-DataGenerics</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.13.2</version>
       <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.apache.commons</groupId>
       <artifactId>commons-math3</artifactId>
-      <version>3.6.1</version> <!-- Asegúrate de utilizar la versión correcta -->
+      <version>3.6.1</version>
     </dependency>
   </dependencies>
 </project>

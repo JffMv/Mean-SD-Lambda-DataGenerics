@@ -1,0 +1,1 @@
+typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"edu.escuelaing.arsw.ASE.app","l":"AppTest"},{"p":"edu.escuelaing.arsw.ASE.app","l":"CalculusStatsTest"},{"p":"edu.escuelaing.arsw.ASE.app","l":"ReadAndExtractTEST"}];updateSearchResults();

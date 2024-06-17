@@ -90,7 +90,7 @@ Then we start designing the app with the next model:
 ![Diagram.png](Resource/Diagram.png)
 
 
-Run the project seen console with where X is phy or loc while Y is where save the project:
+Run the project seen console with where "Route/you/file.you" put the real location of the file:
 ```
 java -cp target/Mean-SD-Lambda-DataGenerics-1.0-SNAPSHOT.jar edu.escuelaing.arsw.ASE.app.App "Route/you/file.you"
 
